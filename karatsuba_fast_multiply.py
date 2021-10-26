@@ -1,20 +1,20 @@
 import doctest
 from math import ceil
 
-def karatsuba_fast_multiplication(x, y):
+def karatsuba_fast_multiply(x, y):
     """
     The fast multiplication algorithm developed by Karatsuba as a 23-year old student in 1960
     to prove that multiplication can be achieved in less than O(n**2) time.
     This is a clever adaptation of the standard divide and conquer multiplication algorithm
     and is able to multiply two *n*-digit integers in O(n**lg(3)) time.
     
-    >>> karatsuba_fast_multiplication(23, 14)
+    >>> karatsuba_fast_multiply(23, 14)
     322
-    >>> karatsuba_fast_multiplication(256, 133)
+    >>> karatsuba_fast_multiply(256, 133)
     34048
-    >>> karatsuba_fast_multiplication(12345, 6789)
+    >>> karatsuba_fast_multiply(12345, 6789)
     83810205
-    >>> karatsuba_fast_multiplication(377, 37)
+    >>> karatsuba_fast_multiply(377, 37)
     13949
     """
 
@@ -37,9 +37,9 @@ def karatsuba_fast_multiplication(x, y):
     # Note that ~z_1~ reuses results from ~z_0~ and ~z_2~, which reduces number of product operations
     # In other words, ~(x_0+x_1)*(y_0+y_1) - z_0 - z_2 == x_0*y_1 + x_1*y_0~
     # By multiplying once instead of twice, the algo is able to greatly decrease calculation speed
-    z_0 = karatsuba_fast_multiplication(x_0, y_0)
-    z_2 = karatsuba_fast_multiplication(x_1, y_1)
-    z_1 = karatsuba_fast_multiplication(x_0 + x_1, y_0 + y_1) - z_0 - z_2
+    z_0 = karatsuba_fast_multiply(x_0, y_0)
+    z_2 = karatsuba_fast_multiply(x_1, y_1)
+    z_1 = karatsuba_fast_multiply(x_0 + x_1, y_0 + y_1) - z_0 - z_2
 
     # Return the result of the product
     return int(10 ** (2 * n) * z_0 + (10 ** n) * z_1 + z_2)
