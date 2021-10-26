@@ -5,6 +5,7 @@ def merge_sort(arr):
     Application of classic divide and conquer algorithm design technique.
     Per the master theorem, the merge sort algorithm exhibits O(n*log(n)) time complexity.
     However, it does not sort in place and is therefore inferior to quick sort.
+
     >>> merge_sort([4, 2, 5, 1, 8, 9, 7, 4])
     [1, 2, 4, 4, 5, 7, 8, 9]
     >>> merge_sort([6, 4, 2, 1])
@@ -13,10 +14,10 @@ def merge_sort(arr):
     [1, 2, 3, 4, 5]
     """
 
-    # If the array contains more than one element, sort it.
-    # Otherwise, it is already trivially sorted as an array of one or no element (i.e., base case).
+    # If the array contains more than one element, sort it
+    # Otherwise, it is already trivially sorted as an array of one or no element (i.e., base case)
     if len(arr) > 1:
-        # Calculate the middle index of the array, then split the array into left and right halves.
+        # Calculate the middle index of the array, then split the array into left and right halves
         # Recursively call merge_sort() on each half, returning sorted array
         mid = len(arr)//2
         left = merge_sort(arr[:mid])
@@ -41,6 +42,7 @@ def merge_sort(arr):
                 j += 1
 
     return arr
+
 
 if __name__ == "__main__":
     doctest.testmod()

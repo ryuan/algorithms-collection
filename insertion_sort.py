@@ -3,6 +3,7 @@ import doctest
 def insertion_sort(arr):
     """
     Standard insertion sort algorithm exhibiting inefficient O(n**2) running time.
+
     >>> insertion_sort([4, 2, 5, 1, 8, 9, 7, 4])
     [1, 2, 4, 4, 5, 7, 8, 9]
     >>> insertion_sort([6, 4, 2, 1])
@@ -30,6 +31,7 @@ def insertion_sort(arr):
         arr[i+1] = key
 
     return arr
+
 
 if __name__ == "__main__":
     doctest.testmod()
