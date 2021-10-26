@@ -24,7 +24,7 @@ def merge_sort(arr):
         right = merge_sort(arr[mid:])
 
         # Initialize the pointer variables:
-        # *i* for left array, *j* for right array, and *k* for merged array
+        # ~i~ for left array, ~j~ for right array, and ~k~ for merged array
         i = j = k = 0
 
         # Append sentinel value of infinity to left and right arrays
@@ -32,7 +32,7 @@ def merge_sort(arr):
         right.append(float('inf'))
 
         # Loops through left and right arrays, copying the smaller of 2 values into merged array
-        # If either *i* or *j* reach the sentinel, copy remainder of other array to merged array  
+        # If either ~i~ or ~j~ reach the sentinel, copy remainder of other array to merged array  
         for k in range(len(left)+len(right)-2):
             if left[i] < right[j]:
                 arr[k] = left[i]

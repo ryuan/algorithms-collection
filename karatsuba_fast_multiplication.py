@@ -1,5 +1,5 @@
 import doctest
-from math import ceil, floor
+from math import ceil
 
 def karatsuba_fast_multiplication(x, y):
     """
@@ -18,14 +18,14 @@ def karatsuba_fast_multiplication(x, y):
     13949
     """
 
-    # Base case is both x and y being single digits, in which case just return their product
+    # Base case is both ~x~ and ~y~ being single digits, in which case just return their product
     if x< 10 and y < 10:
         return x * y
 
-    # Determine the longest digit length between x and y
+    # Determine the longest digit length between ~x~ and ~y~
     size = max(len(str(x)), len(str(y)))
 
-    # Split x and y, ensuring that the right half always gets the extra digit in case *n* is odd
+    # Split ~x~ and ~y~, ensuring that the right half always gets the extra digit in case ~n~ is odd
     n = ceil(size // 2)
     power = 10 ** n
     x_0 = x // power
@@ -34,8 +34,8 @@ def karatsuba_fast_multiplication(x, y):
     y_1 = y % power
 
     # Recursively call function until base case is reached, then multiply back up
-    # Note that 'z_1' reuses results from 'z_0' and 'z_2', which reduces number of product operations
-    # In other words, '(x_0+x_1)*(y_0+y_1) - z_0 - z_2' is equal to 'x_0*y_1 + x_1*y_0'
+    # Note that ~z_1~ reuses results from ~z_0~ and ~z_2~, which reduces number of product operations
+    # In other words, ~(x_0+x_1)*(y_0+y_1) - z_0 - z_2 == x_0*y_1 + x_1*y_0~
     # By multiplying once instead of twice, the algo is able to greatly decrease calculation speed
     z_0 = karatsuba_fast_multiplication(x_0, y_0)
     z_2 = karatsuba_fast_multiplication(x_1, y_1)
