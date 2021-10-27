@@ -15,14 +15,14 @@ def fast_fibonacci(n):
         return 0
     
     # Base case for Fibonacci requires the first two numbers in the sequence
-    arr = []
-    arr.append(0)
-    arr.append(1)
-    # Use the array to store preceeding solutions to avoid repeating recursive calls 
+    fib_arr = []
+    fib_arr.append(0)
+    fib_arr.append(1)
+    # Use the ~fib_array~ to store preceeding solutions to avoid repeating recursive calls 
     for i in range(2, n+1):
-        arr.append(arr[i-1] + arr[i-2])
+        fib_arr.append(fib_arr[i-1] + fib_arr[i-2])
 
-    return arr[n]
+    return fib_arr[n]
 
 
 if __name__ == "__main__":

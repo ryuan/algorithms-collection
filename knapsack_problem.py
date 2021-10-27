@@ -19,8 +19,8 @@ def knapsack_problem(w_arr, v_arr, W):
 
     n = len(v_arr)
 
-    # Create an empty matrix with rows for each item and columns for each weight integer
-    # The base case is the extra row and column for 0 items and 0 weight
+    # Create an empty value matrix with rows for each item and columns for each weight integer
+    # The base case is value of 0 for rows of 0 items and column of 0 weight
     v_matrix = [[0 for j in range(W+1)] for i in range(n+1)]
 
     # The subproblem is defined as the max value of item combination 
