@@ -1,20 +1,20 @@
 import doctest
 import random
 
-def three_way_rqs(arr, p=0, r=None):
+def tripartite_rqs(arr, p=0, r=None):
     """A variant of the randomized quick sort algorithm that sorts across three partitions.
     The additional partition is a middle partition consisting of value equal to the pivot value.
     It is able to sort in-place both pre-sorted and non-distinct inputs at O(n*log(n)) 'expected' time.
     This is a Las Vegas randomized algorithm, since it is guaranteed to produce the same output
     for identical inputs, though with potentially different number of computations.
 
-    >>> three_way_rqs([4, 2, 5, 1, 8, 9, 7, 4])
+    >>> tripartite_rqs([4, 2, 5, 1, 8, 9, 7, 4])
     [1, 2, 4, 4, 5, 7, 8, 9]
-    >>> three_way_rqs([6, 4, 2, 1])
+    >>> tripartite_rqs([6, 4, 2, 1])
     [1, 2, 4, 6]
-    >>> three_way_rqs([1, 2, 3, 4, 5])
+    >>> tripartite_rqs([1, 2, 3, 4, 5])
     [1, 2, 3, 4, 5]
-    >>> three_way_rqs([2, 4, 3, 5, 5, 1, 7, 5, 5])
+    >>> tripartite_rqs([2, 4, 3, 5, 5, 1, 7, 5, 5])
     [1, 2, 3, 4, 5, 5, 5, 5, 7]
     """
 
@@ -30,14 +30,14 @@ def three_way_rqs(arr, p=0, r=None):
         x = random.randint(p, r)
         arr[x], arr[r] = arr[r], arr[x]
         pivot_tuple = three_way_partition(arr, p, r)
-        three_way_rqs(arr, p, pivot_tuple[0]-1)
-        three_way_rqs(arr, pivot_tuple[1]+1, r)
+        tripartite_rqs(arr, p, pivot_tuple[0]-1)
+        tripartite_rqs(arr, pivot_tuple[1]+1, r)
 
         return arr
 
 
 def three_way_partition(arr, p, r):
-    """Sorts array into three partitions:
+    """ Sorts array into three partitions:
     left has values < to pivot | middle has values == pivot | right has values > pivot
 
     >>> three_way_partition([20, 4, 13, 7, 20], 0, 4)
