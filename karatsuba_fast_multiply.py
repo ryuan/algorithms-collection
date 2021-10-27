@@ -2,8 +2,7 @@ import doctest
 from math import ceil
 
 def karatsuba_fast_multiply(x, y):
-    """
-    The fast multiplication algorithm developed by Karatsuba as a 23-year old student in 1960
+    """The fast multiplication algorithm developed by Karatsuba as a 23-year old student in 1960
     to prove that multiplication can be achieved in less than O(n**2) time.
     This is a clever adaptation of the standard divide and conquer multiplication algorithm
     and is able to multiply two n-digit integers in O(n**lg(3)) time.

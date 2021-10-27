@@ -2,8 +2,7 @@ import doctest
 import random
 
 def three_way_rqs(arr, p=0, r=None):
-    """
-    A variant of the randomized quick sort algorithm that sorts across three partitions.
+    """A variant of the randomized quick sort algorithm that sorts across three partitions.
     The additional partition is a middle partition consisting of value equal to the pivot value.
     It is able to sort in-place both pre-sorted and non-distinct inputs at O(n*log(n)) 'expected' time.
     This is a Las Vegas randomized algorithm, since it is guaranteed to produce the same output
@@ -38,8 +37,7 @@ def three_way_rqs(arr, p=0, r=None):
 
 
 def three_way_partition(arr, p, r):
-    """
-    Sorts array into three partitions:
+    """Sorts array into three partitions:
     left has values < to pivot | middle has values == pivot | right has values > pivot
 
     >>> three_way_partition([20, 4, 13, 7, 20], 0, 4)

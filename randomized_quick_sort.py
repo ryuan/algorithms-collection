@@ -2,8 +2,7 @@ import doctest
 import random
 
 def randomized_quick_sort(arr, p=0, r=None):
-    """
-    A variant of the standard quick sort algorithm with randomized pivot selection.
+    """A variant of the standard quick sort algorithm with randomized pivot selection.
     Randomization enables the algorithm to achieve in-place sorting at O(n*log(n)) 'expected' time.
     This is an example of a Las Vegas algorithm since for a given input on different executions,
     randomized quick sort produces the same output with potentially different number of steps.
@@ -35,8 +34,7 @@ def randomized_quick_sort(arr, p=0, r=None):
 
 
 def partition(arr, p, r):
-    """
-    Sorts array into two partitions:
+    """Sorts array into two partitions:
     left partition contains values <= to pivot | right partition contains values > pivot
     """
 

@@ -1,8 +1,7 @@
 import doctest
 
 def insertion_sort(arr):
-    """
-    Standard insertion sort algorithm exhibiting inefficient O(n**2) running time.
+    """Standard insertion sort algorithm exhibiting inefficient O(n**2) running time.
 
     >>> insertion_sort([4, 2, 5, 1, 8, 9, 7, 4])
     [1, 2, 4, 4, 5, 7, 8, 9]

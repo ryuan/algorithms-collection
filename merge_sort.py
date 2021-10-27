@@ -1,8 +1,7 @@
 import doctest
 
 def merge_sort(arr):
-    """
-    Application of classic divide and conquer algorithm design technique.
+    """Application of classic divide and conquer algorithm design technique.
     Per the master theorem, the merge sort algorithm exhibits O(n*log(n)) time complexity.
     However, it does not sort in place and is therefore inferior to quick sort.
 

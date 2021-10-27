@@ -1,8 +1,7 @@
 import doctest
 
 def fast_power(a, n):
-    """
-    Greatly reduce the number of multiplications involved in computing
+    """Greatly reduce the number of multiplications involved in computing
     large powers of a number by explotiing binary exponentiation.
     Achieves O(lg(n)) time complexity, compared to O(n) for the naive method.
 

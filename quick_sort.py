@@ -1,8 +1,7 @@
 import doctest
 
 def quick_sort(arr, p=0, r=None):
-    """
-    Implementation of the standard quick sort algorithm using divide and conquer.
+    """Implementation of the standard quick sort algorithm using divide and conquer.
     Goal is to achive merge sort's O(n*log(n)) run time and insertion sort's in-place sorting.
     Without randomization, quick sort will deterministically require O(n**2) on pre-sorted input.
 
@@ -30,8 +29,7 @@ def quick_sort(arr, p=0, r=None):
 
 
 def partition(arr, p, r):
-    """
-    Sorts array into two partitions:
+    """Sorts array into two partitions:
     left partition contains values <= to pivot | right partition contains values > pivot
     """
 
