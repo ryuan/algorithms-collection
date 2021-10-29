@@ -38,7 +38,7 @@ def merge(left, right):
     right.append(float('inf'))
 
     # Loops through left and right arrays, copying the smaller of 2 values into merged array
-    # If either ~i~ or ~j~ reach the sentinel, copy remainder of other array to merged array  
+    # If either ~i~ or ~j~ reach the sentinel, copy remainder of other array to merged array
     for _ in range(len(left)+len(right)-2):
         if left[i] < right[j]:
             arr.append(left[i])
