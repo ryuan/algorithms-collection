@@ -25,6 +25,14 @@ class Tree:
         else:
             y.right = z
 
+    def maximum(self):
+        def maximum_rec(x: Node):
+            while x.right is not None:
+                x = x.right
+            return x
+
+        return maximum_rec(self.root)
+
     def minimum(self):
         def minimum_rec(x: Node):
             while x.left is not None:
@@ -90,22 +98,23 @@ def main():
     # print BST
     my_tree.display()
     
-    # print minimum key in BST
-    print("minimum key value: "+str(my_tree.minimum()))
+    # print maximum and minimum key in BST
+    print("maximum key value: " + str(my_tree.maximum()))
+    print("minimum key value: " + str(my_tree.minimum()))
 
     # insert 2 nodes.
     node_1 = Node(17)
     node_2 = Node(3)
-    print("inserting 2 nodes:"+str(node_1)+", "+str(node_2))
+    print("inserting 2 nodes:" + str(node_1) + ", " + str(node_2))
     my_tree.insert(node_1)
     my_tree.insert(node_2)
     my_tree.display()
 
     # delete 2 nodes.
-    print("deleting node: "+str(node_1))
+    print("deleting node: " + str(node_1))
     my_tree.delete(node_1)
     my_tree.display()
-    print("deleting node: "+str(node_2))
+    print("deleting node: " + str(node_2))
     my_tree.delete(node_2)
     my_tree.display()
 

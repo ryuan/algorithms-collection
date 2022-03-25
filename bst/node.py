@@ -1,6 +1,5 @@
 class Node:
-    """Node class implementation for use in any binary search tree algorithm.
-    """
+    """Node class implementation for use in any binary search tree algorithm."""
 
     # Initialize default instance variables and pass in key value argument
     def __init__(self, key):
